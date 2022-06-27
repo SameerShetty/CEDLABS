@@ -7,9 +7,28 @@ html {
   scroll-behavior: smooth;
 }
 :root {
-  --shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+  --body: #eeeeee;
+  --red: #da1212;
+  --dblue: #041562;
+  --lblue: #11468f;
+  --grey: #c9d6df;
+  --dblack: #1e2022;
+  --lblack: #52616b;
+  --lwhite: #f0f5f9;
 
+  --shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* font-family: "Kaushan Script", cursive; */
+  --font-ced: "Pathway Gothic One", sans-serif;
+  --font-body: "Poppins", sans-serif;
+  /* --font-main: "Righteous", cursive; */
+  /* --font-main: "Roboto", sans-serif; */
+  /* --font-small-head: "Rock Salt", cursive; */
+  /* font-family: 'Sacramento', cursive; */
+  --font-small-body: "Sora", sans-serif;
+}
+body {
+  background-color: #eeeeee;
+}
 #preloader {
   background: white url("./assets/preloader.gif") no-repeat center;
   background-size: 30%;
@@ -19,8 +38,8 @@ html {
   z-index: 500;
 }
 .activenav {
-  background-color: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(1px);
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(1rem);
   height: 70px;
 }
 .reveal {
@@ -34,13 +53,13 @@ html {
   transform: translateY(0px);
   opacity: 1;
 }
-.btn {
+/* .btn {
   padding: 0.5rem 1.5rem;
   outline: none;
   border-radius: 20px;
   font-size: 1.1rem;
   border: 0;
-}
+} */
 hr {
   border: none;
   height: 2px;
@@ -53,7 +72,10 @@ hr {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: var(--font-body);
+
   padding: 1rem;
+  z-index: 1000;
 }
 .nav .brand_logo a {
   text-decoration: none;
@@ -67,29 +89,30 @@ hr {
 }
 .nav .navbar ul li a {
   text-decoration: none;
-  color: black;
-  font-size: 1.5rem;
+  color: var(--dblack);
+  font-size: 1.2rem;
 }
 .nav .navbar ul li:nth-child(7) {
   display: none;
 }
 .nav .navbar ul li:nth-child(6) {
-  background-color: blue;
+  background-color: var(--lblue);
 
   padding: 0.2rem 1rem;
   border-radius: 15px;
-  color: white;
+  color: var(--body);
 }
 .nav .navbar ul li:nth-child(6) a {
-  color: white;
+  color: var(--body);
 }
 .nav .navbar .nav-item::after {
   content: "";
   width: 0;
   height: 2px;
-  background-color: black;
+  background-color: var(--dblack);
   display: block;
   margin: auto;
+  color: black;
   transition: 0.5s ease-out;
 }
 .nav .navbar .nav-item:hover::after {
@@ -104,13 +127,14 @@ hr {
   display: none;
   flex-direction: column;
   justify-content: space-around;
+  cursor: pointer;
   align-items: center;
-
+  z-index: 9999;
   padding: 5px;
 }
 .nav-toggler span {
   width: 100%;
-  background-color: black;
+  background-color: var(--dblack);
   height: 4px;
   border-radius: 15px;
   transition: 0.4s ease-in-out;
@@ -118,7 +142,7 @@ hr {
 
 @media screen and (max-width: 1170px) {
   .nav .navbar {
-    background-color: aqua;
+    background: var(--lblack);
     position: fixed;
     top: 0;
     right: -250px;
@@ -127,12 +151,15 @@ hr {
     z-index: 1000;
     transition: 0.5s;
   }
-
+  .nav .navbar ul li a {
+    color: var(--grey);
+  }
   .nav .navbar ul li {
     display: block;
     padding: 1rem 0;
     text-align: left;
     width: 200px;
+    color: var(--lwhite);
   }
   .nav .navbar ul {
     margin-right: 30px;
@@ -151,23 +178,24 @@ hr {
     display: flex;
   }
 }
+
 .hero {
   padding-top: 1rem;
   min-height: 100vh;
   width: 100%;
 }
 .hero h1 {
-  /* font-family: var(--font_ced); */
-  font-family: "Pathway Gothic One", sans-serif;
+  font-family: var(--font-ced);
+
   font-size: 9em;
-  /* color: var(--C_red); */
+  color: var(--red);
   letter-spacing: 0.4rem;
   margin-top: 60px;
   margin-left: 100px;
 }
-/* .hero span {
-  color: var(--C_darkblue);
-} */
+.hero span {
+  color: var(--dblue);
+}
 
 .hero_img {
   width: 45%;
@@ -184,19 +212,11 @@ hr {
   }
 }
 .hero_text {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-left: 110px;
   max-width: 450px;
   line-height: 2rem;
-  /* font-family: var(--font_head); */
-}
-.hero_text button {
-  margin-top: 10px;
-  position: relative;
-  background-color: transparent;
-  z-index: 1;
-  color: aqua;
-  border: 0.5px solid black;
+  font-family: var(--font-small-body);
 }
 
 @media screen and (max-width: 1170px) {
@@ -219,7 +239,7 @@ hr {
   }
 
   .hero_text {
-    font-size: 1.1rem;
+    font-size: 1.09rem;
     margin: auto;
     text-align: center;
     max-width: calc(100vw - 40px);
@@ -233,14 +253,14 @@ hr {
   margin-top: 100px;
 }
 #about .about_info h2 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
 
-  /* font-family: var(--font_head); */
+  font-family: var(--font-body);
   padding: 1rem;
 }
 #about .about_info p {
-  font-family: var(--font_main);
-  font-size: 1.5rem;
+  font-family: var(--font-small-body);
+  font-size: 1.2rem;
 
   margin-top: 20px;
   line-height: 2rem;
@@ -255,7 +275,7 @@ hr {
     padding: 0.5rem;
   }
   #about .about_info p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 
     margin-top: 10px;
     line-height: 1.5rem;
@@ -276,6 +296,7 @@ hr {
   margin: auto;
   padding: 1rem;
   font-size: 1.5rem;
+  font-family: var(--font-small-body);
 }
 
 #services .info-box {
@@ -297,9 +318,10 @@ hr {
   object-fit: cover;
 }
 #services .info-box .info_text {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   max-width: 90%;
   line-height: 1.5rem;
+  font-family: var(--font-body);
 }
 #services .info-box .info_text h3 {
   font-size: 2rem;
@@ -433,6 +455,7 @@ hr {
     justify-content: center;
 
     flex-direction: column;
+    flex-wrap: wrap;
     padding: 0.5rem;
   }
   .footer_main div {

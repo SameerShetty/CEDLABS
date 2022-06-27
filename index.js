@@ -7,12 +7,19 @@ window.addEventListener("load", function () {
 //nav-active
 const nav = document.querySelector(".nav");
 window.addEventListener("scroll", fixnav);
-
+var link = document.querySelectorAll(".nav-link");
+var i;
 function fixnav() {
   if (window.scrollY > nav.offsetHeight + 150) {
     nav.classList.add("activenav");
+    for (i = 0; i < 7; i++) {
+      link[i].style.color = "#c9d6df";
+    }
   } else {
     nav.classList.remove("activenav");
+    for (i = 0; i < 7; i++) {
+      link[i].style.color = "#1e2022";
+    }
   }
 }
 
