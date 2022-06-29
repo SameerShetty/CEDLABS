@@ -507,4 +507,8 @@ font-size:1rem;
   .hero h1 {
     font-size: 4rem;
   }
+}@media screen and (device-width: 400px){
+body{
+background-color:black;
+}
 }
